@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-finetuing"
+# Get the build backend to set the project version dynamically.
+dynamic = ["version"]
+# Optionally specify python version constraints.
+# requires-python = "3.8"
+dependencies = [
+    "mypy==1.8.0",
+    "ipykernel==6.29.3",
+    "torch==2.2.1",
+    "datasets==2.18.0",
+    "transformers==4.39.1",
+    "evaluate==0.4.1",
+    "scikit-learn==1.4.1.post1",
+    "lightning==2.2.1",
+    "python-dotenv==1.0.1",
+]
+
+# Installable with `pip install the-project-name[gui]`
+[project.optional-dependencies]
+# gui = ["somegraphicslib", "another"]
+# extrafeature = ["complexextrastuff"]
+
+[tool.ruff.format]
+# Use single quotes rather than double quotes.
+# Double quotes are preserved for triple quotes (eg. doc-strings).
+quote-style = "single"
+
+[tool.mypy]
+warn_unused_configs = true
+disallow_incomplete_defs = true
+mypy_path = "./src"
+
+# Blacklist modules without type stubs
+[[tool.mypy.overrides]]
+module = ['packagewithoutstubs']
+ignore_missing_imports = true

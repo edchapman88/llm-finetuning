@@ -1,0 +1,16 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code: ../../src
+command: >-
+  python azure_jobs/240328_first.py
+environment: azureml:lightning-transformers-docker@latest
+compute: azureml:gpu-cluster-big
+# for single node, multi-gpu do not set the distribution or resource flags, this will be managed by
+# lightning
+# distribution:
+#   type: pytorch
+#   # set process count to the number of gpus per node
+#   process_count_per_instance: 1
+# resources:
+#   instance_count: 1
+experiment_name: first
+description: First test of azure job infra.

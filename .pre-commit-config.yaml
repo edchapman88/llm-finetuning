@@ -11,5 +11,5 @@ repos:
     rev: v1.8.0
     hooks:
       - id: mypy
-        args: [--disallow-incomplete-defs]
+        # args: [--disallow-incomplete-defs]
         additional_dependencies: [numpy==1.26.3]

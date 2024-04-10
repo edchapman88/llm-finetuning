@@ -41,3 +41,9 @@ MANIFEST
 
 # pytorch lightning
 lightning_logs/
+
+# mlflow logs
+src/notebooks/mlruns
+
+# pytorch models
+*.pt

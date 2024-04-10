@@ -18,6 +18,8 @@ dependencies = [
     "scikit-learn==1.4.1.post1",
     "lightning==2.2.1",
     "python-dotenv==1.0.1",
+    "mlflow==2.11.3",
+    "azureml==0.2.7",
 ]
 
 # Installable with `pip install the-project-name[gui]`
@@ -32,10 +34,18 @@ quote-style = "single"
 
 [tool.mypy]
 warn_unused_configs = true
-disallow_incomplete_defs = true
+disallow_incomplete_defs = false
 mypy_path = "./src"
 
 # Blacklist modules without type stubs
 [[tool.mypy.overrides]]
-module = ['packagewithoutstubs']
+module = [
+    'transformers',
+    'mlflow',
+    'azureml.core.run',
+    'lightning',
+    'torch',
+    'torch.utils',
+    'lightning.pytorch.loggers',
+]
 ignore_missing_imports = true

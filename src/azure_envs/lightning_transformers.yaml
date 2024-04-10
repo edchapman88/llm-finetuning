@@ -1,0 +1,6 @@
+$schema: https://azuremlschemas.azureedge.net/latest/environment.schema.json
+name: lightning-transformers
+image: mcr.microsoft.com/azureml/curated/acpt-pytorch-2.2-cuda12.1:2
+# https://ml.azure.com/registries/azureml/environments/acpt-pytorch-2.2-cuda12.1/version/2?tid=4395f4a7-e455-4f95-8a9f-1fbaef6384f9
+conda_file: conda_envs/lightning_transformers_conda.yaml
+description: Pytorch lightning and transformers for training LLMs.

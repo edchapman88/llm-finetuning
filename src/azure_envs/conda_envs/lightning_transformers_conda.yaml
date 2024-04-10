@@ -1,0 +1,12 @@
+name: lightning-transformers-conda
+dependencies:
+  - python=3.10
+  # - pytorch::pytorch=2.2.1
+  - conda-forge::datasets=2.18.0
+  - conda-forge::transformers=4.39.1
+  - conda-forge::evaluate=0.4.1
+  - conda-forge::scikit-learn=1.4.1.post1
+  - conda-forge::lightning=2.2.1
+  - conda-forge::mlflow=2.11.3
+  - pip:
+      - azureml-mlflow
